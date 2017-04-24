@@ -38,16 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.listView = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Añadir
             // 
-            this.Añadir.Location = new System.Drawing.Point(714, 90);
+            this.Añadir.Location = new System.Drawing.Point(221, 429);
             this.Añadir.Name = "Añadir";
             this.Añadir.Size = new System.Drawing.Size(75, 23);
             this.Añadir.TabIndex = 0;
@@ -57,7 +54,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(675, 290);
+            this.button3.Location = new System.Drawing.Point(571, 373);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 2;
@@ -67,21 +64,21 @@
             // 
             // Nombre
             // 
-            this.Nombre.Location = new System.Drawing.Point(559, 92);
+            this.Nombre.Location = new System.Drawing.Point(25, 432);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(149, 20);
             this.Nombre.TabIndex = 4;
             // 
             // Apellido
             // 
-            this.Apellido.Location = new System.Drawing.Point(559, 152);
+            this.Apellido.Location = new System.Drawing.Point(25, 488);
             this.Apellido.Name = "Apellido";
             this.Apellido.Size = new System.Drawing.Size(149, 20);
             this.Apellido.TabIndex = 5;
             // 
             // Foto
             // 
-            this.Foto.Location = new System.Drawing.Point(559, 207);
+            this.Foto.Location = new System.Drawing.Point(25, 546);
             this.Foto.Name = "Foto";
             this.Foto.Size = new System.Drawing.Size(149, 20);
             this.Foto.TabIndex = 6;
@@ -89,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(559, 73);
+            this.label1.Location = new System.Drawing.Point(22, 416);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 8;
@@ -98,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(559, 133);
+            this.label2.Location = new System.Drawing.Point(22, 472);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 9;
@@ -107,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 188);
+            this.label3.Location = new System.Drawing.Point(22, 530);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 10;
@@ -116,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(559, 295);
+            this.label4.Location = new System.Drawing.Point(451, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 13);
             this.label4.TabIndex = 16;
@@ -125,40 +122,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 71);
+            this.label5.Location = new System.Drawing.Point(22, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Liga";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(559, 333);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(368, 304);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(51, 514);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(381, 97);
-            this.listView1.TabIndex = 18;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // listView
             // 
-            this.listView.Location = new System.Drawing.Point(51, 92);
+            this.listView.Location = new System.Drawing.Point(454, 412);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(381, 401);
+            this.listView.Size = new System.Drawing.Size(473, 225);
             this.listView.TabIndex = 19;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(766, 290);
+            this.button1.Location = new System.Drawing.Point(665, 373);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
@@ -173,10 +153,8 @@
             this.ClientSize = new System.Drawing.Size(939, 649);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -188,7 +166,6 @@
             this.MinimumSize = new System.Drawing.Size(955, 687);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,8 +183,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Button button1;
     }

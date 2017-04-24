@@ -89,6 +89,8 @@ namespace PingPong
         {
             listView.Items.Clear();
         }
+
+     
     }
     }
 

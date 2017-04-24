@@ -4,36 +4,14 @@ namespace PingPong
 {
     internal class Liga
     {
-        private string nombreLiga;
+        List<jugador> listaJugadores = new List<jugador>();
+        List<Partidos> listaPartidos = new List<Partidos>();
 
-        private List<jugador> Jugadors;
-
-        public Liga()
+        public void Newplayer(jugador player)
         {
-            Jugadors = new List<jugador>();
+            listaJugadores.Add(player);
         }
 
-        public void NewJugador(jugador jugador)
-        {
-            Jugadors.Add(jugador);
-        }
 
-        public jugador getJugador(int i)
-        {
-            if (i < Jugadors.Count)
-                return Jugadors[i];
-            else
-                return null;
-        }
-
-        public override string ToString()
-        {
-            string msg = "";
-
-            foreach (jugador jug in Jugadors)
-                msg = msg + jug.ToString() + "\n";
-
-            return msg;
-        }
     }
 }
