@@ -1,7 +1,9 @@
 ﻿using Firebase.Database;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,16 +12,20 @@ namespace PingPong
 {
     public partial class Form1 : Form
     {
-       
-       
+              
         Liga liga1 = new Liga();
         List<jugador> listaJugadores = new List<jugador>();
-
 
         public Form1()
         {
             InitializeComponent();
-          
+
+            listView.View = View.Details;
+            listView.FullRowSelect = true;
+            listView.Columns.Add("Nombre", 150);
+            listView.Columns.Add("Apellido", 150);
+            listView.Columns.Add("ID", 150);
+
             var firebase = new FirebaseClient("https://pingpong-92b64.firebaseio.com/");
             var observable = firebase
               .Child("jugadors")
@@ -28,8 +34,6 @@ namespace PingPong
                 
               });
         }
-
-        
 
         private async void Añadir_click(object sender, EventArgs e)
         {
@@ -40,10 +44,11 @@ namespace PingPong
             jug1.nom = Nombre.Text;
             jug1.cognom = Apellido.Text;
             jug1.foto = Foto.Text;
+            var p1 = await child.PostAsync(jug1);
+            Console.WriteLine($"{p1.Key}");
+            jug1.Id = p1.Key;
 
             listaJugadores.Add(jug1);
-
-            var p1 = await child.PostAsync(jug1);
         }
 
         private async Task llegirFDAsync()
@@ -56,28 +61,34 @@ namespace PingPong
             foreach (var p1 in jugadors)
             {
                 p1.Object.Id = p1.Key;
+
+            string puntos = p1.Object.puntos.ToString();
+            string partidos = p1.Object.partidos.ToString();
+
+            ListViewItem list = new ListViewItem(p1.Object.nom);
+
+            list.Name = p1.Object.Id;
                 
-                liga1.NewJugador(p1.Object);
+                    if (!listView.Items.ContainsKey(list.Name))
+                    {
+                        string[] fila = { p1.Object.nom, p1.Object.cognom, p1.Object.Id };
+                        ListViewItem item = new ListViewItem(fila);
+                        listView.Items.Add(item);
 
-                msg = msg + p1.Object.ToString() + "\n";
-                listaJugadores.Add(p1.Object);
-               
+                    }
             }
-
-           
-
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-
-            dataGridView1.DataSource = listaJugadores;
-
-
-        }
-
-        
     }
-}
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            if (listView.Items.Count == 0) { await llegirFDAsync(); }
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listView.Items.Clear();
+        }
+    }
+    }
+
