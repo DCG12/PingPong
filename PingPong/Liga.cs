@@ -1,17 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PingPong
 {
-    internal class Liga
+    class Liga
     {
-        List<jugador> listaJugadores = new List<jugador>();
-        List<Partidos> listaPartidos = new List<Partidos>();
-
-        public void Newplayer(jugador player)
+        List<Partidos> partidos;
+            
+        public Liga()
         {
-            listaJugadores.Add(player);
+            if (partidos==null)
+            {
+                partidos = new List<Partidos>();
+            }
         }
 
+        public Liga(List<Partidos> part)
+        {
+            partidos = part;
+        }
+
+        
 
     }
 }

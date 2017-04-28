@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
+            this.listViewLiga = new System.Windows.Forms.ListView();
+            this.btCrearLiga = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Añadir
@@ -146,11 +148,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // listViewLiga
+            // 
+            this.listViewLiga.Location = new System.Drawing.Point(25, 35);
+            this.listViewLiga.Name = "listViewLiga";
+            this.listViewLiga.Size = new System.Drawing.Size(902, 179);
+            this.listViewLiga.TabIndex = 21;
+            this.listViewLiga.UseCompatibleStateImageBehavior = false;
+            // 
+            // btCrearLiga
+            // 
+            this.btCrearLiga.Location = new System.Drawing.Point(75, 239);
+            this.btCrearLiga.Name = "btCrearLiga";
+            this.btCrearLiga.Size = new System.Drawing.Size(75, 23);
+            this.btCrearLiga.TabIndex = 22;
+            this.btCrearLiga.Text = "Crear Liga";
+            this.btCrearLiga.UseVisualStyleBackColor = true;
+            this.btCrearLiga.Click += new System.EventHandler(this.btCrearLiga_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 649);
+            this.Controls.Add(this.btCrearLiga);
+            this.Controls.Add(this.listViewLiga);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.label5);
@@ -185,6 +207,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView listViewLiga;
+        private System.Windows.Forms.Button btCrearLiga;
     }
 }
 
