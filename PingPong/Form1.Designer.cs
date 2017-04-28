@@ -42,6 +42,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listViewLiga = new System.Windows.Forms.ListView();
             this.btCrearLiga = new System.Windows.Forms.Button();
+            this.Jugador1txt = new System.Windows.Forms.TextBox();
+            this.resultado1txt = new System.Windows.Forms.TextBox();
+            this.Jugador2txt = new System.Windows.Forms.TextBox();
+            this.resultado2txt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Guardar = new System.Windows.Forms.Button();
+            this.Siguiente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Añadir
@@ -152,7 +162,7 @@
             // 
             this.listViewLiga.Location = new System.Drawing.Point(25, 35);
             this.listViewLiga.Name = "listViewLiga";
-            this.listViewLiga.Size = new System.Drawing.Size(902, 179);
+            this.listViewLiga.Size = new System.Drawing.Size(565, 179);
             this.listViewLiga.TabIndex = 21;
             this.listViewLiga.UseCompatibleStateImageBehavior = false;
             // 
@@ -166,11 +176,105 @@
             this.btCrearLiga.UseVisualStyleBackColor = true;
             this.btCrearLiga.Click += new System.EventHandler(this.btCrearLiga_Click);
             // 
+            // Jugador1txt
+            // 
+            this.Jugador1txt.Location = new System.Drawing.Point(75, 292);
+            this.Jugador1txt.Name = "Jugador1txt";
+            this.Jugador1txt.Size = new System.Drawing.Size(100, 20);
+            this.Jugador1txt.TabIndex = 23;
+            // 
+            // resultado1txt
+            // 
+            this.resultado1txt.Location = new System.Drawing.Point(221, 292);
+            this.resultado1txt.Name = "resultado1txt";
+            this.resultado1txt.Size = new System.Drawing.Size(100, 20);
+            this.resultado1txt.TabIndex = 24;
+            // 
+            // Jugador2txt
+            // 
+            this.Jugador2txt.Location = new System.Drawing.Point(357, 291);
+            this.Jugador2txt.Name = "Jugador2txt";
+            this.Jugador2txt.Size = new System.Drawing.Size(100, 20);
+            this.Jugador2txt.TabIndex = 25;
+            // 
+            // resultado2txt
+            // 
+            this.resultado2txt.Location = new System.Drawing.Point(488, 292);
+            this.resultado2txt.Name = "resultado2txt";
+            this.resultado2txt.Size = new System.Drawing.Size(100, 20);
+            this.resultado2txt.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(75, 273);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Jugador 1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(221, 272);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "resultado Jugador 1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(357, 272);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Jugador 2";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(488, 271);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Resultado jugador 2";
+            // 
+            // Guardar
+            // 
+            this.Guardar.Location = new System.Drawing.Point(78, 334);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(75, 23);
+            this.Guardar.TabIndex = 31;
+            this.Guardar.Text = "Grardar";
+            this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
+            // 
+            // Siguiente
+            // 
+            this.Siguiente.Location = new System.Drawing.Point(224, 334);
+            this.Siguiente.Name = "Siguiente";
+            this.Siguiente.Size = new System.Drawing.Size(75, 23);
+            this.Siguiente.TabIndex = 32;
+            this.Siguiente.Text = "Siguiente";
+            this.Siguiente.UseVisualStyleBackColor = true;
+            this.Siguiente.Click += new System.EventHandler(this.Siguiente_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 649);
+            this.Controls.Add(this.Siguiente);
+            this.Controls.Add(this.Guardar);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.resultado2txt);
+            this.Controls.Add(this.Jugador2txt);
+            this.Controls.Add(this.resultado1txt);
+            this.Controls.Add(this.Jugador1txt);
             this.Controls.Add(this.btCrearLiga);
             this.Controls.Add(this.listViewLiga);
             this.Controls.Add(this.button1);
@@ -209,6 +313,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listViewLiga;
         private System.Windows.Forms.Button btCrearLiga;
+        private System.Windows.Forms.TextBox Jugador1txt;
+        private System.Windows.Forms.TextBox resultado1txt;
+        private System.Windows.Forms.TextBox Jugador2txt;
+        private System.Windows.Forms.TextBox resultado2txt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button Guardar;
+        private System.Windows.Forms.Button Siguiente;
     }
 }
 

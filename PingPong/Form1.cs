@@ -15,7 +15,7 @@ namespace PingPong
               
         Liga liga1 = new Liga();
         List<jugador> listaJugadores = new List<jugador>();
-
+        Partidos partiActual;
         List<Partidos> liga;
 
         public Form1()
@@ -147,6 +147,31 @@ namespace PingPong
                 
             }
             return contador;
+        }
+
+        private void Siguiente_Click(object sender, EventArgs e)
+        {
+            foreach (Partidos p in liga)
+            {
+                if (!p.jugado)
+                {
+                    resultado1txt.Text = null; 
+                    resultado2txt.Text = null;
+                    partiActual = p;
+                    Jugador1txt.Text = p.codigoj1;
+                    Jugador2txt.Text = p.codigoj2;
+                    return;
+                }
+            }
+        }
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            string codigo=liga.First(x => x.Equals(partiActual)).setMarcador(int.Parse(resultado1txt.Text),int.Parse(resultado2txt.Text));
+
+            listaJugadores.First(x => x.Codigo.Equals(codigo)).puntos= listaJugadores.First(x => x.Codigo.Equals(codigo)).puntos + 3;
+            listaJugadores.First(x => x.Codigo.Equals(codigo)).partidos = listaJugadores.First(x => x.Codigo.Equals(codigo)).partidos + 1;
+
         }
     }
 }
