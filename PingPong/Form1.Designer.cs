@@ -32,15 +32,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.TextBox();
             this.Apellido = new System.Windows.Forms.TextBox();
-            this.Foto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.listViewLiga = new System.Windows.Forms.ListView();
+            this.nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cognom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.partidos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.puntos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btCrearLiga = new System.Windows.Forms.Button();
             this.Jugador1txt = new System.Windows.Forms.TextBox();
             this.resultado1txt = new System.Windows.Forms.TextBox();
@@ -52,6 +54,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.Guardar = new System.Windows.Forms.Button();
             this.Siguiente = new System.Windows.Forms.Button();
+            this.btClass = new System.Windows.Forms.Button();
+            this.Instrucciones = new System.Windows.Forms.TextBox();
+            this.borrar = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Añadir
@@ -66,7 +73,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(571, 373);
+            this.button3.Location = new System.Drawing.Point(588, 383);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 2;
@@ -88,13 +95,6 @@
             this.Apellido.Size = new System.Drawing.Size(149, 20);
             this.Apellido.TabIndex = 5;
             // 
-            // Foto
-            // 
-            this.Foto.Location = new System.Drawing.Point(25, 546);
-            this.Foto.Name = "Foto";
-            this.Foto.Size = new System.Drawing.Size(149, 20);
-            this.Foto.TabIndex = 6;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -113,32 +113,23 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Apellido";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 530);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Foto";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(451, 383);
+            this.label4.Location = new System.Drawing.Point(452, 393);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
+            this.label4.Size = new System.Drawing.Size(124, 13);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Lista  de jugadores";
+            this.label4.Text = "LISTA DE JUGADORES";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(22, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.Size = new System.Drawing.Size(113, 13);
             this.label5.TabIndex = 17;
-            this.label5.Text = "Liga";
+            this.label5.Text = "CLASIFICACION LIGA";
             // 
             // listView
             // 
@@ -150,7 +141,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(665, 373);
+            this.button1.Location = new System.Drawing.Point(699, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;
@@ -160,11 +151,35 @@
             // 
             // listViewLiga
             // 
+            this.listViewLiga.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nom,
+            this.cognom,
+            this.partidos,
+            this.puntos});
             this.listViewLiga.Location = new System.Drawing.Point(25, 35);
             this.listViewLiga.Name = "listViewLiga";
-            this.listViewLiga.Size = new System.Drawing.Size(565, 179);
+            this.listViewLiga.Size = new System.Drawing.Size(529, 179);
             this.listViewLiga.TabIndex = 21;
             this.listViewLiga.UseCompatibleStateImageBehavior = false;
+            this.listViewLiga.View = System.Windows.Forms.View.Details;
+            // 
+            // nom
+            // 
+            this.nom.Text = "Nombre";
+            this.nom.Width = 148;
+            // 
+            // cognom
+            // 
+            this.cognom.Text = "Apellido";
+            // 
+            // partidos
+            // 
+            this.partidos.Text = "Partidos";
+            // 
+            // puntos
+            // 
+            this.puntos.Text = "Puntos";
+            this.puntos.Width = 114;
             // 
             // btCrearLiga
             // 
@@ -185,21 +200,21 @@
             // 
             // resultado1txt
             // 
-            this.resultado1txt.Location = new System.Drawing.Point(221, 292);
+            this.resultado1txt.Location = new System.Drawing.Point(199, 292);
             this.resultado1txt.Name = "resultado1txt";
             this.resultado1txt.Size = new System.Drawing.Size(100, 20);
             this.resultado1txt.TabIndex = 24;
             // 
             // Jugador2txt
             // 
-            this.Jugador2txt.Location = new System.Drawing.Point(357, 291);
+            this.Jugador2txt.Location = new System.Drawing.Point(327, 292);
             this.Jugador2txt.Name = "Jugador2txt";
             this.Jugador2txt.Size = new System.Drawing.Size(100, 20);
             this.Jugador2txt.TabIndex = 25;
             // 
             // resultado2txt
             // 
-            this.resultado2txt.Location = new System.Drawing.Point(488, 292);
+            this.resultado2txt.Location = new System.Drawing.Point(454, 292);
             this.resultado2txt.Name = "resultado2txt";
             this.resultado2txt.Size = new System.Drawing.Size(100, 20);
             this.resultado2txt.TabIndex = 26;
@@ -216,7 +231,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(221, 272);
+            this.label7.Location = new System.Drawing.Point(199, 273);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 28;
@@ -225,7 +240,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(357, 272);
+            this.label8.Location = new System.Drawing.Point(324, 273);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 29;
@@ -234,7 +249,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(488, 271);
+            this.label9.Location = new System.Drawing.Point(452, 273);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 13);
             this.label9.TabIndex = 30;
@@ -252,7 +267,7 @@
             // 
             // Siguiente
             // 
-            this.Siguiente.Location = new System.Drawing.Point(224, 334);
+            this.Siguiente.Location = new System.Drawing.Point(171, 334);
             this.Siguiente.Name = "Siguiente";
             this.Siguiente.Size = new System.Drawing.Size(75, 23);
             this.Siguiente.TabIndex = 32;
@@ -260,11 +275,62 @@
             this.Siguiente.UseVisualStyleBackColor = true;
             this.Siguiente.Click += new System.EventHandler(this.Siguiente_Click);
             // 
+            // btClass
+            // 
+            this.btClass.Location = new System.Drawing.Point(171, 239);
+            this.btClass.Name = "btClass";
+            this.btClass.Size = new System.Drawing.Size(75, 23);
+            this.btClass.TabIndex = 33;
+            this.btClass.Text = "Clasificacion";
+            this.btClass.UseVisualStyleBackColor = true;
+            this.btClass.Click += new System.EventHandler(this.Clasificacion_Click);
+            // 
+            // Instrucciones
+            // 
+            this.Instrucciones.Location = new System.Drawing.Point(571, 35);
+            this.Instrucciones.Multiline = true;
+            this.Instrucciones.Name = "Instrucciones";
+            this.Instrucciones.Size = new System.Drawing.Size(356, 179);
+            this.Instrucciones.TabIndex = 34;
+            // 
+            // borrar
+            // 
+            this.borrar.Location = new System.Drawing.Point(221, 461);
+            this.borrar.Name = "borrar";
+            this.borrar.Size = new System.Drawing.Size(75, 23);
+            this.borrar.TabIndex = 35;
+            this.borrar.Text = "Borrar";
+            this.borrar.UseVisualStyleBackColor = true;
+            this.borrar.Click += new System.EventHandler(this.borrar_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(25, 382);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 13);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "JUGADOR";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(568, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "INSTRUCCIONES";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 649);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.borrar);
+            this.Controls.Add(this.Instrucciones);
+            this.Controls.Add(this.btClass);
             this.Controls.Add(this.Siguiente);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.label9);
@@ -281,10 +347,8 @@
             this.Controls.Add(this.listView);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Foto);
             this.Controls.Add(this.Apellido);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.button3);
@@ -303,10 +367,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox Nombre;
         private System.Windows.Forms.TextBox Apellido;
-        private System.Windows.Forms.TextBox Foto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView;
@@ -323,6 +385,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Button Siguiente;
+        private System.Windows.Forms.Button btClass;
+        private System.Windows.Forms.ColumnHeader nom;
+        private System.Windows.Forms.ColumnHeader puntos;
+        private System.Windows.Forms.ColumnHeader partidos;
+        private System.Windows.Forms.ColumnHeader cognom;
+        private System.Windows.Forms.TextBox Instrucciones;
+        private System.Windows.Forms.Button borrar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
     }
 }
 

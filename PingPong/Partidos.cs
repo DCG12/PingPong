@@ -9,7 +9,7 @@
         public bool jugado = false;
 
         public Partidos()
-        {}
+        { }
 
         public Partidos(string codj1, string codj2)
         {
@@ -24,7 +24,7 @@
             marcadorj1 = mar1;
             marcadorj2 = mar2;
         }
-        
+
         public string setMarcador(int mar1, int mar2)
         {
             marcadorj1 = mar1;
@@ -32,8 +32,8 @@
             jugado = true;
 
             //if de comparacion de marcadores para saber quien gana, y devuelve el codigo del ganador
-            //return codigoj1;
-            return null;
+           return codigoj1;
+            
+            }
         }
     }
-}
