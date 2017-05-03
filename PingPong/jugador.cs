@@ -3,7 +3,7 @@ using System;
 
 namespace PingPong
 {   
-    class jugador
+    public class jugador
     {
         public string Id { get; set; }
         public string nom { get; set; }

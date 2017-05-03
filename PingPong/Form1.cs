@@ -45,7 +45,7 @@ namespace PingPong
         + " añadido una nueva puntuación puedes volver a pulsar clasificación y la clasificacion se actulizara. P.D. Hay jugadores de ejemplos ya creados en firebase ";
         }
 
-        private async void Añadir_click(object sender, EventArgs e)
+        public async void Añadir_click(object sender, EventArgs e)
         {
             var client = new FirebaseClient("https://pingpong-92b64.firebaseio.com/");
             var child = client.Child("jugadors/");
@@ -53,15 +53,14 @@ namespace PingPong
             jugador jug1 = new jugador();
             jug1.nom = Nombre.Text;
             jug1.cognom = Apellido.Text;
-            jug1.foto = Foto.Text;
             var p1 = await child.PostAsync(jug1);
             Console.WriteLine($"{p1.Key}");
             jug1.Id = p1.Key;
 
             listaJugadores.Add(jug1);
         }
-
-        private async Task llegirFDAsync()
+    
+        public async Task llegirFDAsync()
         {
 
             //Recoge los datos del firebase, los pone en el list de jugadores y los muestro en el ListView
@@ -69,6 +68,7 @@ namespace PingPong
 
             var firebase = new FirebaseClient("https://pingpong-92b64.firebaseio.com/");
             var jugadors = await firebase.Child("jugadors").OnceAsync<jugador>();
+           
 
             foreach (var p1 in jugadors)
             {
@@ -85,7 +85,7 @@ namespace PingPong
 
 
                 list.Name = p1.Object.Id;
-             
+                
                 if (!listView.Items.ContainsKey(list.Name))
                 {
                     string[] fila = { p1.Object.nom, p1.Object.cognom, p1.Object.Id };
@@ -93,16 +93,17 @@ namespace PingPong
                     listView.Items.Add(item);
                 }
             }
+
         }
 
-        private async void button3_Click(object sender, EventArgs e)
+        public async void button3_Click(object sender, EventArgs e)
         {
 
             //Activa el metodo llegirFDAsync
             await llegirFDAsync();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             //Borra la información que se muestra en el listView de los jugadores
             listView.Items.Clear();
@@ -113,7 +114,7 @@ namespace PingPong
 
         }
 
-        private void btCrearLiga_Click(object sender, EventArgs e)
+        public void btCrearLiga_Click(object sender, EventArgs e)
         {
             //Crea una nueva liga
             int nPartidos = 0;
@@ -127,7 +128,7 @@ namespace PingPong
             }
         }
 
-        private int calcularNumeroPartidos()
+        public int calcularNumeroPartidos()
         {
             //Calcula el numero de partidos que se tendran jugar en función de los jugadores en el firebase
             int contador = 0;
@@ -153,7 +154,7 @@ namespace PingPong
             return contador;
         }
 
-        private void Siguiente_Click(object sender, EventArgs e)
+        public void Siguiente_Click(object sender, EventArgs e)
         {
 
             //Nos permite avanzar para poner los resultados de los partidos
@@ -171,7 +172,7 @@ namespace PingPong
             }
         }
 
-        private void Guardar_Click(object sender, EventArgs e)
+        public void Guardar_Click(object sender, EventArgs e)
         {
             //Guardar los resultados de los partidos
             string codigoGanador = liga.First(x => x.Equals(partiActual)).setMarcador(int.Parse(resultado1txt.Text), int.Parse(resultado2txt.Text));
@@ -189,7 +190,7 @@ namespace PingPong
             }
         }
 
-        private void Clasificacion_Click(object sender, EventArgs e)
+        public void Clasificacion_Click(object sender, EventArgs e)
         {
             //Muestra la información de los jugadores su nombre, apellido, puntuación y partidos jugados
             listViewLiga.Items.Clear();
@@ -203,7 +204,7 @@ namespace PingPong
 
         }
 
-        private async void borrar_Click(object sender, EventArgs e)
+        public async void borrar_Click(object sender, EventArgs e)
         {
             //Elimina los datos del firebase
                 var client = new FirebaseClient("https://pingpong-92b64.firebaseio.com/");
